@@ -9,6 +9,9 @@
     --title-font-weight: 700;
     --main-color: #f5f5f5;
     --accent-color: #000;
+    --contour-like-icon: #000;
+    --fill-active-like-icon: #ff0000;
+    --fill-hover-like-icon: #000;
 }
 
 .theme-light .page {
@@ -35,6 +38,9 @@
         --title-font-weight: 700;
         --main-color: #f5f5f5;
         --accent-color: #000;
+        --contour-like-icon: #000;
+        --fill-active-like-icon: #ff0000;
+        --fill-hover-like-icon: #000;
     }
     .page {
         background: repeating-linear-gradient(
