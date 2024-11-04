@@ -297,7 +297,7 @@
 .card__icon-button:focus-visible {
     outline: solid 2px var(--accent-color);
     width: 39px;
-    height: 34px;
+    height: 33px;
 }
 
 .button__text {
