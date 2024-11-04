@@ -220,7 +220,8 @@
 .button-container {
     display: flex;
     justify-content: flex-end;
-    margin: 16px 24px 24px;
+    gap: 8px;
+    margin: 21px 24px 24px;
     align-items: center;
 }
 
@@ -283,7 +284,10 @@
 .card__icon-button {
     border: none;
     background-color: var(--main-color);
-    transition: border 0.3s ease;
+    transition: outline 0.3s ease;
+    padding: 0;
+    display: flex;
+    align-self: center;
 }
 
 .card__icon-button:focus {
@@ -291,7 +295,9 @@
 }
 
 .card__icon-button:focus-visible {
-    border: solid 2px var(--accent-color);
+    outline: solid 2px var(--accent-color);
+    width: 39px;
+    height: 34px;
 }
 
 .button__text {
