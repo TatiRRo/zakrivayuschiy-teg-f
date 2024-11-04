@@ -640,13 +640,15 @@
                                 >Вставьте дискету, чтобы продолжить</span
                             >
                         </div>
-                        <button
-                            class="button dialog__save-button"
-                            type="button"
-                            onclick="window['dialog__save-message'].close()"
-                        >
-                            <span class="button__text">OK</span>
-                        </button>
+                        <form method="dialog">
+                            <button
+                                class="button dialog__save-button"
+                                type="button"
+                                onclick="window['dialog__save-message'].close()"
+                            >
+                                <span class="button__text">OK</span>
+                            </button>
+                        </form>
                     </dialog>
                 </div>
             </section>
