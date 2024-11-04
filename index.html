@@ -645,7 +645,8 @@
             </div>
             <button
                 class="button dialog__save-button"
-                onclick="document.getElementById('dialog__save-message').close();"
+                type="button"
+                onclick="window['dialog__save-message'].close()"
             >
                 <span class="button__text">OK</span>
             </button>

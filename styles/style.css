@@ -517,8 +517,8 @@
 }
 
 .dialog__message-container .save-button-icon {
-    width: 39px;
-    height: 39px;
+    min-width: 39px;
+    min-height: 39px;
 }
 
 .dialog__save-button {
@@ -530,5 +530,15 @@
 .dialog__message-container .button__text {
     line-height: 150%;
     text-transform: uppercase;
-    width: 198px;
+}
+
+@media (width > 375px) {
+    .dialog {
+        width: 357px;
+        padding: 30px 29px;
+    }
+
+    .dialog__message-container {
+        margin: 0 0 29px 0;
+    }
 }
