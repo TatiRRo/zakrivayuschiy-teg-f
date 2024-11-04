@@ -630,7 +630,11 @@
                 </div>
             </section>
         </main>
-        <dialog id="dialog__save-message" class="dialog">
+        <dialog
+            id="dialog__save-message"
+            class="dialog"
+            aria-label="Уведомление о необходимости вставить дискету"
+        >
             <div class="dialog__message-container">
                 <svg viewBox="0 0 28 28" class="save-button-icon">
                     <use href="#floppy-1"></use>
@@ -642,7 +646,7 @@
             <form class="dialog__close-button" method="dialog">
                 <button
                     class="button dialog__save-button"
-                    type="button"
+                    type="submit"
                     onclick="window['dialog__save-message'].close()"
                 >
                     <span class="button__text">OK</span>
