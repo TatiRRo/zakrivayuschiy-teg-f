@@ -643,11 +643,12 @@
                     >Вставьте дискету, чтобы продолжить</span
                 >
             </div>
-            <form class="dialog__close-button" method="dialog">
-                <button class="button dialog__save-button" type="submit">
-                    <span class="button__text">OK</span>
-                </button>
-            </form>
+            <button
+                class="button dialog__save-button"
+                onclick="document.getElementById('dialog__save-message').close();"
+            >
+                <span class="button__text">OK</span>
+            </button>
         </dialog>
         <script src="./scripts/like.js"></script>
         <svg
