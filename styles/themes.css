@@ -32,6 +32,12 @@
         linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
 }
 
+.theme-light .button:hover .button__text,
+.theme-light .button:hover .save-button-icon {
+    color: var(--main-color);
+    mix-blend-mode: difference;
+}
+
 /* .theme-dark  */
 
 :root.theme-dark {
