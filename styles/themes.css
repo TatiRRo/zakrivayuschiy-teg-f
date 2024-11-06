@@ -32,35 +32,6 @@
         linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --main-font-weight: 400;
-        --title-font-weight: 700;
-        --main-color: #f5f5f5;
-        --accent-color: #000;
-        --contour-like-icon: #000;
-        --fill-active-like-icon: #ff0000;
-        --fill-hover-like-icon: #000;
-    }
-    .page {
-        background: repeating-linear-gradient(
-                90deg,
-                #d3d3d3,
-                #d3d3d3 2px,
-                transparent 2px,
-                transparent 4px
-            ),
-            repeating-linear-gradient(
-                180deg,
-                #d3d3d3,
-                #d3d3d3 2px,
-                transparent 2px,
-                transparent 4px
-            ),
-            linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
-    }
-}
-
 /* .theme-dark  */
 
 :root.theme-dark {
@@ -90,8 +61,10 @@
         linear-gradient(180deg, #007f0c 0.01%, #004306 100%);
 }
 
-.theme-dark .save-button-icon {
-    fill: var(--accent-color);
+.theme-dark .button:hover .button__text,
+.theme-dark .button:hover .save-button-icon {
+    color: var(--accent-color);
+    mix-blend-mode: difference;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -122,11 +95,13 @@
             linear-gradient(180deg, #007f0c 0.01%, #004306 100%);
     }
 
-    .save-button-icon {
-        fill: var(--accent-color);
-    }
-
     .header {
         background-color: var(--main-color);
+    }
+
+    .button:hover .button__text,
+    .button:hover .save-button-icon {
+        color: var(--accent-color);
+        mix-blend-mode: difference;
     }
 }

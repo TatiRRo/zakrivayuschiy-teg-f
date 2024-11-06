@@ -12,3 +12,245 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+/* Анимация стрелочки на кнопке переключения тем .theme-menu__button:disabled */
+
+.theme-menu__button:disabled::before {
+    content: '▶';
+    position: absolute;
+    width: 16px;
+    height: 13px;
+    top: 0px;
+    left: -17px;
+    animation: move-arrow 2s steps(1) infinite;
+}
+
+@keyframes move-arrow {
+    50% {
+        transform: translateX(-2px);
+    }
+    100% {
+        transform: translateX(2px);
+    }
+}
+
+/* Состояние focus,focus-visible для .card__icon-button */
+
+.card__icon-button .heart .main-body,
+.card__icon-button .heart .core,
+.card__icon-button .sparks {
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+.card__icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.card__icon-button:focus {
+    outline: none;
+}
+
+.card__icon-button:focus-visible {
+    outline: solid 2px var(--accent-color);
+}
+
+/* Анимация .card__icon-button при нажатии по сердечку- Начальное состояние — пустой контур */
+.card__icon-button .contour {
+    fill: var(--accent-color);
+}
+
+/* Первое состояние — при наведении заполняется core */
+.card__icon-button:hover .heart .core {
+    fill: var(--fill-hover-like-icon);
+    opacity: 1;
+    transition: fill 0s ease;
+}
+
+/* Второе состояние — при наведении заполняется .contour и .main-body */
+.card__icon-button:hover .heart .contour,
+.card__icon-button:hover .heart .main-body {
+    fill: var(--fill-hover-like-icon);
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+/* Третье состояние — зажатие сердечка - появляется середина */
+.card__icon-button:active .heart .core {
+    fill: var(--fill-active-like-icon);
+    opacity: 1;
+    transition: fill 0.3s ease 0s;
+}
+
+/* Четвертое состояние — зажатие сердечка - закрашивается основное тело */
+.card__icon-button:active .heart .main-body {
+    fill: var(--fill-active-like-icon);
+    opacity: 1;
+    transition: fill 0.6s ease 0.3s;
+}
+
+/* Пятое состояние — клик - контур становится красным */
+
+.card__icon-button .is-liked .heart .contour {
+    fill: var(--fill-active-like-icon);
+    opacity: 1;
+    transition: fill 0.6s ease 0s;
+}
+
+/* Шестое состояние — клик -.main-body и .core становятся красными */
+
+.card__icon-button .is-liked .heart .main-body,
+.card__icon-button .is-liked .heart .core {
+    fill: var(--fill-active-like-icon);
+    opacity: 1;
+    transition: fill 0.6s ease 0.3s;
+}
+
+/* Седьмое состояние — клик(отпускаем сердечко) - при нажатии увеличивается размер .like-icon*/
+
+.like-icon.is-liked .heart {
+    animation: heart-pulse 0.3s ease-in 0.3s both;
+}
+
+@keyframes heart-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+        transform-origin: center;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Восьмое состояние — клик(отпускаем сердечко) - при нажатии появляются искры .like-icon*/
+
+.like-icon.is-liked .sparks {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.3s;
+    animation: spark-flash 0.6s ease-in 0.6s both;
+}
+
+@keyframes spark-flash {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Состояние hover,disabled,focus,focus-visible для .theme-menu__button */
+
+.theme-menu__button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.theme-menu__button:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.theme-menu__button:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.theme-menu__button:focus {
+    outline: none;
+}
+
+.theme-menu__button:focus-visible {
+    outline: none;
+    opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible::after {
+    width: 100%;
+    left: 0;
+    outline: none;
+    opacity: 0.6;
+}
+
+/* Состояние hover,disabled,focus,focus-visible для .button */
+
+.button {
+    position: relative;
+    background-color: var(--main-color);
+    border: solid 2px var(--accent-color);
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: color 0.3s ease, box-shadow 0.5s ease-in-out;
+}
+
+.button__text {
+    position: relative;
+    z-index: 1;
+    transition: color 0.5s ease-in-out;
+}
+
+.save-button-icon {
+    position: relative;
+    z-index: 1;
+    transition: color 0.5s ease-in-out;
+    width: 28px;
+    height: 28px;
+    color: var(--accent-color);
+}
+
+@media (width > 375px) {
+    .save-button-icon {
+        width: 21px;
+        height: 21px;
+    }
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: width 3s ease-in-out;
+    z-index: 0;
+}
+
+.button:hover::before {
+    width: 100%;
+}
+
+.button:hover .button__text,
+.button:hover .save-button-icon {
+    color: var(--main-color);
+    mix-blend-mode: difference;
+}
+
+.button:hover .save-button-icon {
+    fill: var(--main-color);
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:focus-visible {
+    box-shadow: 2px 2px 0 0 var(--accent-color);
+}
+
+.button::active {
+    box-shadow: none;
+}
