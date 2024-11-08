@@ -10,4 +10,7 @@
     --contour-like-icon: #000;
     --fill-active-like-icon: #ff0000;
     --fill-hover-like-icon: #000;
+    --background-color-grid: #d3d3d3;
+    --background-color-fill-start: #e7e7e7;
+    --background-color-fill-end: #1a1a1a;
 }

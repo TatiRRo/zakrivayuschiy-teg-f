@@ -192,10 +192,27 @@
     border: solid 2px var(--accent-color);
     color: var(--accent-color);
     cursor: pointer;
-    transition: color 0.3s ease, box-shadow 0.5s ease-in-out;
+    transition: box-shadow 0.5s ease-in-out;
+    /* transition: color 0.3s ease-in-out, box-shadow 0.5s ease-in-out; */
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--accent-color);
+    transition: width 0.5s ease-in-out;
+    z-index: 0;
 }
 
 .button__text {
+    font-family: var(--accent-font);
+    font-size: 14px;
+    line-height: 90%;
+    color: var(--accent-color);
     position: relative;
     z-index: 1;
     transition: color 0.5s ease-in-out;
@@ -217,18 +234,6 @@
     }
 }
 
-.button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background-color: var(--accent-color);
-    transition: width 0.6s ease-in-out;
-    z-index: 0;
-}
-
 .button:hover::before {
     width: 100%;
 }
@@ -239,10 +244,6 @@
     mix-blend-mode: difference;
 }
 
-.button:hover .save-button-icon {
-    fill: var(--main-color);
-}
-
 .button:focus {
     outline: none;
 }
@@ -251,6 +252,6 @@
     box-shadow: 2px 2px 0 0 var(--accent-color);
 }
 
-.button::active {
+.button:active {
     box-shadow: none;
 }

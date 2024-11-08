@@ -12,30 +12,31 @@
     --contour-like-icon: #000;
     --fill-active-like-icon: #ff0000;
     --fill-hover-like-icon: #000;
+    --background-color-grid: #d3d3d3;
+    --background-color-fill-start: #e7e7e7;
+    --background-color-fill-end: #1a1a1a;
 }
 
 .theme-light .page {
-    background: repeating-linear-gradient(
+    background-image: repeating-linear-gradient(
             90deg,
-            #d3d3d3,
-            #d3d3d3 2px,
+            var(--background-color-grid),
+            var(--background-color-grid) 2px,
             transparent 2px,
             transparent 4px
         ),
         repeating-linear-gradient(
             180deg,
-            #d3d3d3,
-            #d3d3d3 2px,
+            var(--background-color-grid),
+            var(--background-color-grid) 2px,
             transparent 2px,
             transparent 4px
         ),
-        linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
-}
-
-.theme-light .button:hover .button__text,
-.theme-light .button:hover .save-button-icon {
-    color: var(--main-color);
-    mix-blend-mode: difference;
+        linear-gradient(
+            180deg,
+            var(--background-color-fill-start) 0.01%,
+            var(--background-color-fill-end) 100%
+        );
 }
 
 /* .theme-dark  */
@@ -47,31 +48,38 @@
     --accent-color: #00cc14;
     --contour-like-icon: #00cc14;
     --fill-hover-like-icon: #00cc14;
+    --background-color-grid: #000;
+    --background-color-fill-start: #007f0c;
+    --background-color-fill-end: #004306;
 }
 
 .theme-dark .page {
-    background: repeating-linear-gradient(
+    background-image: repeating-linear-gradient(
             90deg,
-            #000,
-            #000 2px,
+            var(--background-color-grid),
+            var(--background-color-grid) 2px,
             transparent 2px,
             transparent 4px
         ),
         repeating-linear-gradient(
             180deg,
-            #000,
-            #000 2px,
+            var(--background-color-grid),
+            var(--background-color-grid) 2px,
             transparent 2px,
             transparent 4px
         ),
-        linear-gradient(180deg, #007f0c 0.01%, #004306 100%);
+        linear-gradient(
+            180deg,
+            var(--background-color-fill-start) 0.01%,
+            var(--background-color-fill-end) 100%
+        );
 }
 
-.theme-dark .button:hover .button__text,
+/* .theme-dark .button:hover .button__text,
 .theme-dark .button:hover .save-button-icon {
     color: var(--accent-color);
     mix-blend-mode: difference;
-}
+} */
 
 @media (prefers-color-scheme: dark) {
     :root {
@@ -81,33 +89,40 @@
         --accent-color: #00cc14;
         --contour-like-icon: #00cc14;
         --fill-hover-like-icon: #00cc14;
+        --background-color-grid: #000;
+        --background-color-fill-start: #007f0c;
+        --background-color-fill-end: #004306;
     }
 
     .page {
-        background: repeating-linear-gradient(
+        background-image: repeating-linear-gradient(
                 90deg,
-                #000,
-                #000 2px,
+                var(--background-color-grid),
+                var(--background-color-grid) 2px,
                 transparent 2px,
                 transparent 4px
             ),
             repeating-linear-gradient(
                 180deg,
-                #000,
-                #000 2px,
+                var(--background-color-grid),
+                var(--background-color-grid) 2px,
                 transparent 2px,
                 transparent 4px
             ),
-            linear-gradient(180deg, #007f0c 0.01%, #004306 100%);
+            linear-gradient(
+                180deg,
+                var(--background-color-fill-start) 0.01%,
+                var(--background-color-fill-end) 100%
+            );
     }
 
     .header {
         background-color: var(--main-color);
     }
 
-    .button:hover .button__text,
+    /* .button:hover .button__text,
     .button:hover .save-button-icon {
         color: var(--accent-color);
         mix-blend-mode: difference;
-    }
+    } */
 }
