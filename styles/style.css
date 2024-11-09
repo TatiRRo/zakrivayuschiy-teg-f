@@ -221,7 +221,7 @@
 
 @media (width > 375px) {
     .card__img {
-        min-height: 698px;
+        max-height: 698px;
     }
 
     .card__article {
@@ -248,32 +248,31 @@
     position: relative;
     background-color: var(--main-color);
     border: solid 2px var(--accent-color);
-    color: var(--accent-color);
 }
 
 .button::before {
     content: '';
     position: absolute;
+    display: block;
     top: 0;
     left: 0;
-    width: 0;
-    height: 100%;
+    block-size: 100%;
+    inline-size: 100%;
     background-color: var(--accent-color);
-    z-index: 0;
 }
 
 .button__text {
     font-family: var(--accent-font);
     font-size: 14px;
     line-height: 90%;
-    color: var(--accent-color);
+    color: var(--invert-accent-color);
     font-stretch: 110%;
 }
 
 .save-button-icon {
     width: 28px;
     height: 28px;
-    color: var(--accent-color);
+    color: var(--invert-accent-color);
 }
 
 @media (width > 375px) {
@@ -324,16 +323,13 @@
     border: solid 2px var(--accent-color);
     min-width: 341px;
     padding: 30px 38px;
-    position: fixed;
-    inset: 0;
     transition: opacity 0.3s ease-in-out;
-    left: 0;
-    bottom: -189px;
 }
 
 .dialog:not([open]) {
     pointer-events: none;
     opacity: 0;
+    display: none;
 }
 
 .dialog::backdrop {
