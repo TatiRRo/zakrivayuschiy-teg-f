@@ -188,7 +188,7 @@
 
 .button {
     cursor: pointer;
-    transition: box-shadow 0.5s ease;
+    transition: box-shadow 0.5s ease-in-out;
 }
 
 .button::before {
@@ -201,11 +201,6 @@
 .button:hover::before {
     transform-origin: left;
     transform: scaleX(1);
-}
-
-.button:not(:hover)::before {
-    transform-origin: left;
-    transform: scaleX(0);
 }
 
 .button__text {

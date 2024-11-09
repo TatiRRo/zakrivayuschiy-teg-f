@@ -40,6 +40,14 @@
         );
 }
 
+.theme-light .button__text {
+    color: var(--invert-accent-color);
+}
+
+.theme-light .save-button-icon {
+    color: var(--invert-accent-color);
+}
+
 /* .theme-dark  */
 
 :root.theme-dark {
